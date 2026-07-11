@@ -181,16 +181,6 @@ button {
   font-weight: 800;
 }
 
-.stage::after {
-  content: "×";
-  position: absolute;
-  left: 190px;
-  top: -42px;
-  z-index: 1;
-  color: var(--muted);
-  font-weight: 900;
-}
-
 .stage.active {
   display: block;
   animation: stageIn 280ms steps(4, end) both;
@@ -932,11 +922,6 @@ h3 {
     font-size: 0.82rem;
   }
 
-  .stage::after {
-    left: 165px;
-    top: -38px;
-  }
-
   .stage-header {
     grid-template-columns: 44px 1fr;
   }
@@ -1019,8 +1004,7 @@ h3 {
     padding: 0;
   }
 
-  .stage::before,
-  .stage::after {
+  .stage::before {
     display: none;
   }
 
