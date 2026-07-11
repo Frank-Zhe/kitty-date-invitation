@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kitty 约会邀请</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-wash" aria-hidden="true"></div>
+    <div class="kitty-sky" aria-hidden="true">
+      <span class="sky-sticker sticker-bow s1"></span>
+      <span class="sky-sticker kitty-face s2"><i></i></span>
+      <span class="sky-sticker paw-print s3"></span>
+      <span class="sky-sticker sticker-bow s4"></span>
+      <span class="sky-sticker kitty-face s5"><i></i></span>
+      <span class="sky-sticker sparkle s6">♡</span>
+      <span class="sky-sticker paw-print s7"></span>
+      <span class="sky-sticker sparkle s8">✦</span>
+    </div>
+    <div class="heart-layer" id="heartLayer" aria-hidden="true"></div>
+
+    <main class="app-shell">
+      <section class="stage intro-stage active" data-step="intro">
+        <div class="kitty-hero-badge" aria-hidden="true">
+          <span class="kitty-face big-kitty"><i></i></span>
+          <span class="badge-bow sticker-bow"></span>
+        </div>
+        <h1>可以和我一起约会嘛？！</h1>
+        <p class="lead">系统检测到：有人已经紧张到开始认真写网页了。请收下这份粉粉的小邀请。</p>
+
+        <div class="choice-zone" id="choiceZone">
+          <button class="btn yes-btn" id="yesBtn" type="button">
+            <span class="btn-bow" aria-hidden="true"></span>
+            愿意 ❤
+          </button>
+          <button class="btn no-btn" id="noBtn" type="button" aria-label="先不要">先不要</button>
+        </div>
+      </section>
+
+      <section class="stage picker-stage" data-step="activity">
+        <div class="stage-header">
+          <button class="icon-btn" data-back="intro" type="button" aria-label="返回上一页">‹</button>
+          <div>
+            <div class="top-note">Dating step 01</div>
+            <h2>我们玩点什么？</h2>
+          </div>
+          <div class="progress-pill">1 / 4</div>
+        </div>
+        <div class="option-grid" id="activityOptions">
+          <button class="option-card" type="button" data-kind="activity" data-value="日落散步" data-icon="🌇">
+            <span class="card-bow"></span>
+            <span class="option-icon">🌇</span>
+            <span class="option-title">日落散步</span>
+            <span class="option-copy">慢慢走，把今天聊成软软的晚风。</span>
+          </button>
+          <button class="option-card" type="button" data-kind="activity" data-value="电影约会" data-icon="🎬">
+            <span class="card-bow"></span>
+            <span class="option-icon">🎬</span>
+            <span class="option-title">电影约会</span>
+            <span class="option-copy">爆米花负责香，我负责偷偷看你笑。</span>
+          </button>
+          <button class="option-card" type="button" data-kind="activity" data-value="Kitty 甜品店" data-icon="🎀">
+            <span class="card-bow"></span>
+            <span class="option-icon">🎀</span>
+            <span class="option-title">Kitty 甜品店</span>
+            <span class="option-copy">点一份粉粉甜品，再拍一张超可爱合照。</span>
+          </button>
+          <button class="option-card" type="button" data-kind="activity" data-value="手作陶艺" data-icon="🏺">
+            <span class="card-bow"></span>
+            <span class="option-icon">🏺</span>
+            <span class="option-title">手作陶艺</span>
+            <span class="option-copy">一起做个小东西，把这天捏进回忆里。</span>
+          </button>
+          <button class="option-card" type="button" data-kind="activity" data-value="游乐园夜场" data-icon="🎡">
+            <span class="card-bow"></span>
+            <span class="option-icon">🎡</span>
+            <span class="option-title">游乐园夜场</span>
+            <span class="option-copy">灯亮起来的时候，我想和你一起心动。</span>
+          </button>
+          <button class="option-card" type="button" data-kind="activity" data-value="贴纸拍照馆" data-icon="📸">
+            <span class="card-bow"></span>
+            <span class="option-icon">📸</span>
+            <span class="option-title">贴纸拍照馆</span>
+            <span class="option-copy">拍一组粉白贴纸照，偷偷珍藏很久。</span>
+          </button>
+          <button class="option-card" type="button" data-kind="activity" data-value="Livehouse" data-icon="🎤">
+            <span class="card-bow"></span>
+            <span class="option-icon">🎤</span>
+            <span class="option-title">Livehouse</span>
+            <span class="option-copy">把喜欢的歌，听成我们的小秘密。</span>
+          </button>
+          <button class="option-card" type="button" data-kind="activity" data-value="城市夜景" data-icon="🌃">
+            <span class="card-bow"></span>
+            <span class="option-icon">🌃</span>
+            <span class="option-title">城市夜景</span>
+            <span class="option-copy">夜景会发光，你也会。</span>
+          </button>
+        </div>
+        <p class="micro-feedback" id="activityFeedback" aria-live="polite"></p>
+      </section>
+
+      <section class="stage picker-stage" data-step="food">
+        <div class="stage-header">
+          <button class="icon-btn" data-back="activity" type="button" aria-label="返回上一页">‹</button>
+          <div>
+            <div class="top-note">Dating step 02</div>
+            <h2>我们吃点什么？</h2>
+          </div>
+          <div class="progress-pill">2 / 4</div>
+        </div>
+        <div class="option-grid" id="foodOptions">
+          <button class="option-card" type="button" data-kind="food" data-value="粉白主题下午茶" data-icon="🍰">
+            <span class="card-bow"></span>
+            <span class="option-icon">🍰</span>
+            <span class="option-title">粉白主题下午茶</span>
+            <span class="option-copy">蛋糕、奶油、蝴蝶结，漂亮得像送给你的礼物。</span>
+          </button>
+          <button class="option-card" type="button" data-kind="food" data-value="热气腾腾的火锅" data-icon="🍲">
+            <span class="card-bow"></span>
+            <span class="option-icon">🍲</span>
+            <span class="option-title">热气腾腾的火锅</span>
+            <span class="option-copy">咕嘟咕嘟，把氛围也煮得热热的。</span>
+          </button>
+          <button class="option-card" type="button" data-kind="food" data-value="韩式烤肉" data-icon="🥩">
+            <span class="card-bow"></span>
+            <span class="option-icon">🥩</span>
+            <span class="option-title">韩式烤肉</span>
+            <span class="option-copy">我负责烤好，你负责拥有第一口。</span>
+          </button>
+          <button class="option-card" type="button" data-kind="food" data-value="日式寿喜锅" data-icon="🥘">
+            <span class="card-bow"></span>
+            <span class="option-icon">🥘</span>
+            <span class="option-title">日式寿喜锅</span>
+            <span class="option-copy">甜咸刚好，像我想见你的心情。</span>
+          </button>
+          <button class="option-card" type="button" data-kind="food" data-value="意面和甜品" data-icon="🍝">
+            <span class="card-bow"></span>
+            <span class="option-icon">🍝</span>
+            <span class="option-title">意面和甜品</span>
+            <span class="option-copy">主食浪漫，甜品负责把嘴角哄起来。</span>
+          </button>
+          <button class="option-card" type="button" data-kind="food" data-value="草莓奶茶蛋糕" data-icon="🧋">
+            <span class="card-bow"></span>
+            <span class="option-icon">🧋</span>
+            <span class="option-title">草莓奶茶蛋糕</span>
+            <span class="option-copy">甜甜的东西，当然要和你一起吃。</span>
+          </button>
+          <button class="option-card" type="button" data-kind="food" data-value="精致寿司拼盘" data-icon="🍣">
+            <span class="card-bow"></span>
+            <span class="option-icon">🍣</span>
+            <span class="option-title">精致寿司拼盘</span>
+            <span class="option-copy">一口一个小惊喜，刚好配你的小表情。</span>
+          </button>
+          <button class="option-card" type="button" data-kind="food" data-value="Brunch 小店" data-icon="🥞">
+            <span class="card-bow"></span>
+            <span class="option-icon">🥞</span>
+            <span class="option-title">Brunch 小店</span>
+            <span class="option-copy">懒懒地见面，漂漂亮亮地开始。</span>
+          </button>
+        </div>
+        <p class="micro-feedback" id="foodFeedback" aria-live="polite"></p>
+      </section>
+
+      <section class="stage time-stage" data-step="time">
+        <div class="stage-header">
+          <button class="icon-btn" data-back="food" type="button" aria-label="返回上一页">‹</button>
+          <div>
+            <div class="top-note">Dating step 03</div>
+            <h2>什么时候见面？</h2>
+          </div>
+          <div class="progress-pill">3 / 4</div>
+        </div>
+
+        <div class="time-panel">
+          <span class="panel-kitty kitty-face"><i></i></span>
+          <label for="dateTime">我们的约会时间</label>
+          <input id="dateTime" type="datetime-local" step="3600" />
+          <p id="timeHint">挑一个你舒服的时间，剩下的我会乖乖准备好。</p>
+        </div>
+
+        <div class="mood-row" aria-label="约会小奖励">
+          <div>
+            <span class="mood-label">心动值</span>
+            <div class="mood-meter"><span id="moodMeter"></span></div>
+          </div>
+          <button class="btn small-btn" id="luckyBtn" type="button">抽一枚小惊喜</button>
+        </div>
+        <p class="micro-feedback" id="luckyFeedback" aria-live="polite"></p>
+
+        <button class="btn primary-wide" id="createInviteBtn" type="button" disabled>盖章生成小请柬</button>
+      </section>
+
+      <section class="stage result-stage" data-step="result">
+        <div class="stage-header">
+          <button class="icon-btn" data-back="time" type="button" aria-label="返回上一页">‹</button>
+          <div>
+            <div class="top-note">Dating ticket</div>
+            <h2>约会小票已生成</h2>
+          </div>
+          <div class="progress-pill">4 / 4</div>
+        </div>
+
+        <article class="invite-card" id="inviteCard">
+          <div class="ticket-stamp">心动盖章</div>
+          <span class="invite-kitty kitty-face"><i></i></span>
+          <p class="invite-kicker">真开心你没有拒绝～</p>
+          <h3>我会准时来接你！</h3>
+          <dl>
+            <div>
+              <dt>约会活动</dt>
+              <dd id="resultActivity"></dd>
+            </div>
+            <div>
+              <dt>想吃美食</dt>
+              <dd id="resultFood"></dd>
+            </div>
+            <div>
+              <dt>约会时间</dt>
+              <dd id="resultTime"></dd>
+            </div>
+            <div>
+              <dt>隐藏惊喜</dt>
+              <dd id="resultSurprise"></dd>
+            </div>
+          </dl>
+          <p class="promise">我会提前到，带着好心情、满格电量，还有一点点见到你的紧张。</p>
+        </article>
+
+        <div class="action-row">
+          <button class="btn ghost-btn" id="copyBtn" type="button">复制小请柬</button>
+          <button class="btn ghost-btn" id="printBtn" type="button">打印 / 保存</button>
+          <button class="btn small-btn" id="restartBtn" type="button">再选一次</button>
+        </div>
+        <p class="micro-feedback" id="copyFeedback" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
